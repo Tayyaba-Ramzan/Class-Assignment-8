@@ -1,21 +1,11 @@
+"use client"
 import { client } from '@/sanity/lib/client';
 import { PortableText } from '@portabletext/react';
 import { PortableTextBlock } from '@portabletext/types';
 import Image from 'next/image';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-type BlogPost = {
-  slug: string;
-  title: string;
-  publishedAt: string;
-  authorName: string;
-  imageUrl: string;
-  authorImage: string;
-  mainImage: { alt: string };
-  body: PortableTextBlock[];
-};
-
-const fetchBlogPostBySlug = async (slug: string): Promise<BlogPost | null> => {
+const fetchBlogPostBySlug = async (slug) => {
   try {
     const query = `*[_type == "post" && slug.current == $slug] {
       "slug": slug.current,
@@ -35,19 +25,23 @@ const fetchBlogPostBySlug = async (slug: string): Promise<BlogPost | null> => {
   }
 };
 
-export default async function BlogPostPage({
-  params: rawParams,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
-  const params = await rawParams;
+export default function BlogPostPage({ params }) {
+  const [blogPost, setBlogPost] = useState(null);
   const { slug } = params;
+
+  useEffect(() => {
+    if (slug) {
+      const fetchData = async () => {
+        const fetchedPost = await fetchBlogPostBySlug(slug);
+        setBlogPost(fetchedPost);
+      };
+      fetchData();
+    }
+  }, [slug]);
 
   if (!slug) {
     return <div className="text-center text-red-500">Post not found</div>;
   }
-
-  const blogPost = await fetchBlogPostBySlug(slug);
 
   if (!blogPost) {
     return <div className="text-center text-red-500">Post not found</div>;
