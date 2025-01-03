@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import travel from '../../../public/travel.jpg';
 import Link from 'next/link';
+import travel from '../../../public/travel.jpg';
 
 export default function AboutPage() {
   return (
@@ -36,8 +36,9 @@ export default function AboutPage() {
             Our Vision
           </h2>
           <p className="text-gray-700 text-lg leading-7 max-w-3xl mx-auto">
-            We aim to ignite your wanderlust and inspire you to explore Pakistan’s breathtaking landscapes, rich culture, and diverse heritage. 
-            Whether it's snow-capped mountains or bustling cities, every journey has a story to tell.
+            We aim to ignite your wanderlust and inspire you to explore Pakistan&#39;s
+            breathtaking landscapes, rich culture, and diverse heritage. 
+            Whether it&#39;s snow-capped mountains or bustling cities, every journey has a story to tell.
           </p>
         </div>
 
@@ -64,7 +65,7 @@ export default function AboutPage() {
           </div>
           <div className="bg-white shadow-lg rounded-lg p-6 text-center">
             <h3 className="text-2xl font-semibold text-blue-600 mb-2">Cultural Insights</h3>
-            <p className="text-gray-600">Experience Pakistan’s traditions and hospitality up close.</p>
+            <p className="text-gray-600">Experience Pakistan&#39;s traditions and hospitality up close.</p>
           </div>
         </div>
       </section>
@@ -72,7 +73,7 @@ export default function AboutPage() {
       <section className="mt-16 py-12 bg-blue-600 text-white text-center">
         <h2 className="text-3xl font-bold mb-4">Join Us on an Unforgettable Journey</h2>
         <p className="text-lg leading-7 max-w-3xl mx-auto mb-8">
-          Let’s explore the beauty of Pakistan together. From towering peaks to serene beaches, 
+        Let&#39;s explore the beauty of Pakistan together. From towering peaks to serene beaches, 
           every adventure awaits your arrival. Ready to start your journey?
         </p>
         <button className="px-6 py-3 bg-white text-blue-600 font-bold rounded-lg shadow hover:bg-gray-100 transition">

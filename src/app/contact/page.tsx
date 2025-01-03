@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React, { useState } from "react";
 
 const ContactPage = () => {
@@ -42,7 +43,13 @@ const ContactPage = () => {
           <div className="space-y-6">
             <div className="flex items-center space-x-4">
               <div className="bg-blue-300 p-3 rounded-full">
-                <img src="address.png" alt="Address Icon" className="w-6 h-6 text-blue-600" />
+                <Image
+                src={"/address.png"}
+                alt="Address Icon"
+                width={6}
+                height={6}
+                className="text-blue-600"
+                />
               </div>
               <div>
                 <h3 className="font-medium text-gray-800">Address</h3>
@@ -52,7 +59,13 @@ const ContactPage = () => {
 
             <div className="flex items-center space-x-4">
               <div className="bg-blue-300 p-3 rounded-full">
-                <img src="/email.png" alt="Email Icon" className="w-6 h-6 text-blue-600" />
+              <Image
+                src={"/email.png"}
+                alt="Email Icon"
+                width={6}
+                height={6}
+                className="text-blue-600"
+                />
               </div>
               <div>
                 <h3 className="font-medium text-gray-800">Email</h3>
@@ -62,7 +75,13 @@ const ContactPage = () => {
 
             <div className="flex items-center space-x-4">
               <div className="bg-blue-300 p-3 rounded-full">
-                <img src="/call.png" alt="Phone Icon" className="w-6 h-6 text-blue-600" />
+              <Image
+                src={"/call.png"}
+                alt="Phone Icon"
+                width={6}
+                height={6}
+                className="text-blue-600"
+                />
               </div>
               <div>
                 <h3 className="font-medium text-gray-800">Phone</h3>
@@ -72,7 +91,13 @@ const ContactPage = () => {
 
             <div className="flex items-center space-x-4">
               <div className="bg-blue-300 p-3 rounded-full">
-                <img src="site.png" alt="site Icon" className="w-6 h-6 text-blue-600" />
+              <Image
+                src={"/site.png"}
+                alt="site Icon"
+                width={6}
+                height={6}
+                className="text-blue-600"
+                />
               </div>
               <div>
                 <h3 className="font-medium text-gray-800">Website</h3>
